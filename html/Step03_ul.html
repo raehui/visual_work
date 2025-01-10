@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_ul.html</title>
+    <style>
+        .my-ul{
+            color: red;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .my-ul>li{
+            color: blue;
+
+        } /* my-ul의 자식중에서 li 선택 / 안써도 자손으로 인식해서 변경됨*/
+
+        .my-ul>li{
+            display: inline;
+        }/*블록요소를 인라인 요소로 변경 가능(상호 가능)*/
+
+        .my-link{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .my-link li{
+            display: inline;
+        }
+        
+        .my-link a{
+            text-decoration: none;
+            color: chartreuse;
+        }
+        
+        .my-link a:hover { /*a요소에 마우스가 hover 되면*/
+            text-decoration: underline;
+            color: chartreuse;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>순서 없는 목록(unorderde list) ul 요소</h1>
+    
+    <h2>친구 목록 입니다</h2>
+    <div class="aaa"></div> 
+    <div class="aaa bbb"></div> <!--요소를 모아서 클래스로 지정 / div.aaa.bbb 입력-->
+    <div id="one"></div> <!--div.one / 특정 요소를 유일한 식별값-->
+    <div class="aaa" id="one"></div> 
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div> <!--div*5-->
+
+    <!-- div{div입니다} ctrl + space : 자동 완성 기능 활성화 -->
+
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div> <!--div{div}*5-->
+
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div> <!--div{div$*5}-->
+
+    <ul>
+        <li></li>
+    </ul> <!--ul>li-->
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul> <!--ul>*5-->
+    <h2>친구 목록입니다</h2>
+    <ul>
+        <li>김구라</li>
+        <li>해골</li>
+        <li>원숭이</li>
+    </ul> <!--tab을 누르면 자동으로 다음 요소 text로 이동-->
+
+    <h2>친구 목록입니다(ul의 스타일 변경)</h2>
+    <ul class="my-ul">
+        <li>김구라</li>
+        <li>해골</li>
+        <li>원숭이</li>
+    </ul>
+
+    <ul class="my-ul">
+        <li>김구라</li>
+        <li>해골</li>
+        <li>원숭이</li>
+    </ul>
+    
+    <a href="https://naver.com">naver</a>
+    <a href="https://daum.net">daum</a>
+
+    <h2>바로 가기 목록</h2>
+    <ul class="my-link">
+        <li><a href="https://naver.com">naver</a></li>
+        <li><a href="https://daum.net">daum</a></li>
+    </ul>
+
+
+</body>
+</html>

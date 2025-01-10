@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_form2.html</title>
+</head>
+<body>
+    <div class="container">
+        <h1>회원 가입 폼 입니다.</h1>
+        <form action="send" method="get" novalidate>
+            <div>
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email" placeholder="이메일 입력...">
+            </div>
+            <fieldset>
+                <legend>성별 선택</legend>
+                <label>
+                    <input type="radio" name="gender" value="man" checked> 남자
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="woman"> 여자
+                </label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>취미 정보 선택</legend> <!--check box는 다중선택 가능-->
+                <label>
+                    <input type="checkbox" name="hobby" value="leather"> 가죽공예 
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="drum">드럼
+                </label>
+                <lable>
+                    <input type="checkbox" name="hobby" value="piano">피아노
+                </lable>
+                <label>
+                    <input type="checkbox" name="hobby" value="etc">기타 등등...
+                </label>
+            </fieldset>
+            
+            <label for="job">직업</label> <!--for = if/ label과 id를 쌍으로 묶기-->
+            <select name="job" id="job">
+                <option value="">선택</option>
+                <option value="gong">공무원</option>
+                <option value="doctor">의사</option>
+                <option value="teacher">선생님</option>
+                <option >기타</option> <!--value값이 없으면 inner Text 값이 들어감-->
+            </select>
+            <br>
+            
+            <label for="lunch">점심 선택</label>
+            <select name="lunch" id="lunch" multiple>
+                <optgroup label="김밥천국">
+                    <option>라면</option>
+                    <option>쫄면</option>
+                    <option>김밥</option>
+                </optgroup>
+                <optgroup label="우육면가">
+                    <option>우육탕면</option>
+                    <option>도가니탕면</option>
+                    <option>새우완탕면</option>
+                </optgroup>                               
+            </select>
+            <br>
+            <label for="file">첨부파일</label>
+            <input type="file"  name="file" id="file">
+            <br>
+            <label for="comment">하고 싶은말</label>
+            <textarea name="comment" id="comment" rows="10"></textarea><!--뭔가를 작성할 여지가 있으면-->
+            <br>
+            <button type="submit">가입</button>
+        </form>
+    </div>
+</body>
+</html>

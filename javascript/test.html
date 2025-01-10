@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test.html</title>
+</head>
+<body>
+    <script>
+        //상수
+        const num=10;
+        const myName="김구라";
+        const isRin =true;
+
+        const sing = function(){
+            console.log("노래를 해요!");
+        }; //{}안에 있는 내용은 호출을 해야만 실행됨
+
+        const a = sing();
+
+        const b = sing;
+
+        const home = function(){
+            console.log("집가라~~~!!");
+        };
+
+        //변수
+        //키만 다르고 함수(공간은 공유)
+        //object가 하나 만들어졌음
+        //mem의 value를 변경하면 mem2도 변경
+        let mem = {num:1, name:"김구라",isMan: true};
+
+        let mem2 = mem;
+
+        //여기도 array는 하나만 만들어짐
+        let foods =["떡볶이","국수","돈까스"];
+
+        let foods2=foods;
+
+
+
+
+        
+
+    </script>   
+</body>
+</html>

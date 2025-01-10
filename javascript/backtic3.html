@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backtic3.html</title>
+</head>
+<body>
+    <div class="container">
+        <button id="addBtn">추가하기</button>
+        <button id="addBtn2">추가하기2</button>
+        <h1>회원 정보</h1>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+
+            
+        </table>
+    </div>
+    <script>        
+        //table 에 추가할 sample 데이터(서버에서 받아온 데이터라고 가정하자)
+        let mem ={num:1,name:"김구라",addr:"노량진"};
+
+        document.querySelector("#addBtn").addEventListener("click",function(){
+            //1. td 요소 3개를 만들어서(3줄코딩)
+            const td1 =document.createElement("td"); // 요소 만들어진 것은 object
+            const td2 =document.createElement("td");
+            const td3 =document.createElement("td");
+
+            //2. 각각에 번호 , 이름, 주소를 innetText 로 출력하고(3줄코딩)
+            td1.innerText = mem.num; // objcet에 innerText 추가하기
+            td2.innerText = mem.name;
+            td3.innerText = mem.addr;
+            
+            //3.  tr 요소를 만든다.(1줄)
+            const tr =document.createElement("tr");
+
+            //4. tr 요소의 자식으로 td요소 3개를 추가한다(3줄코딩)
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+
+            //5. table 요소의 자식으로 위에서 만드 tr 요소를 추가한다(1줄)
+            document.querySelector("table").append(tr);
+        });
+
+        document.querySelector("#addBtn2").addEventListener("click",function(){
+            //html 형식의 문자열을 backtic을 이용해서 구성한다.
+            const tr=`
+                <tr>
+                    <td>${mem.num}</td>
+                    <td>${mem.name}</td>
+                    <td>${mem.addr}</td>
+                </tr>                    
+            `;
+            //문제는 있지만 일단 html로 해석 하게끔 table요소에 넣어보기
+            //하나로 덮어쓰기
+            // document.querySelector("table").innerHTML =tr;
+            //기존에 있던 거 유지하면서 문자열을 html로 끼어넣는다!
+            document.querySelector("table").insertAdjacentHTML("beforeend",tr);
+            
+        });
+
+    </script>
+</body>
+</html>

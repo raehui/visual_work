@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form5_test</title>           
+</head>
+<body>
+    <h1>폼 요소에 기본값 설정하기</h1>
+
+    <p>
+        서버에서 클라이언트에거 폼을 응답할 때 이미 저장된 값을
+        출력한 채로 응답을 해야 할 때가 있다.
+        예를 들어 회원 가입된 정보 보기로 이동한다면   
+        DB에 이미 저장된 내용을 출력해 주어야 한다.
+    </p>
+    <form action="send">
+        이메일 <input type="email" name="email" id="email" value="kwak@naver.com">
+        <br>
+
+        <select name="job" id="job">
+            <option value="">선택</option>
+            <option value="gomg">공무원</option>
+            <option value="doctor" selected>의사</option>
+            <option value="teacher">선생님</option>
+            <option>기타</option>
+        </select>
+        <br>
+        <fieldset>
+            <legend>취미 정보 선택</legend>
+            <label>
+                <input type="checkbox" name="hobby" value="leather">가죽공예
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="drum" checked>드럼
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="piano">피아노
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="etc">기타 등등
+            </label>
+        </fieldset>
+        <textarea cols="20" rows="10">
+하잉 좋은 아침
+        </textarea>
+        <br>
+        색상 <input type="color" value="#ff00ff">
+        <br>
+        날짜 <input type="date" value="2024-12-03">
+        <br>
+        날짜 시간 <input type="datetime-local" value="2024-12-03T18:30">
+        <br>
+        <button type="submit">제출</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>

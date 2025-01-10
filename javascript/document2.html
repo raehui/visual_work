@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document2.html</title>
+</head>
+<body> <!--p{p$}*5 커서 끝에 놓기-->
+    <!-- <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p> -->
+
+    <p>김구라</p>
+    <p>해골</p>
+    <p>원숭이</p>
+    <p>주뎅이</p>
+    <p>덩어리</p>
+    
+    <script>
+        let names=[];
+         
+        //p요소에 들어 있는 innerText를 순서대로 names 배열에 넣어보세요.
+        //반복문
+        /*
+        for(let i=0;i<5;i++){
+            const name=document.querySelectorAll("p")[i].innerText;
+            names.push(name);
+        }
+        */
+       
+        //모든 p요소의 참조값을 배열에 담아오기
+        const ps=document.querySelectorAll("p");
+
+        //p요소의 갯수만큼 반복문 돌면서
+        for(let i=0;i<ps.length;i++){
+            //i번째 p요소의 innerText를 읽어와서
+            const name=ps[i].innerText;
+            //names 배열에 누적시키기
+            names.push(name);
+        }
+
+    
+        
+
+        
+        
+    </script>
+</body>
+</html>

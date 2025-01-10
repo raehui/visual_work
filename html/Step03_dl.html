@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_do.html</title>
+    <style>
+        
+        html{
+            font-size: 10px; /*html을 변경하는 것만으로 동일하게 가능*/
+        }
+        .container{
+            border: 1px dotted red;
+            max-width: 768px; /*폭을 정해져야 가운데 정렬이 가능함*/
+            margin: 0 auto; 
+        }
+
+        dl{
+            margin: 0;
+        }
+        dt{
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        dd{
+            font-size: 1rem;
+            color: #555;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container"> <!--반응형 레이아웃-->
+    <h1>정의형 목록 (definition list) dl 요소</h1>
+    <dl> <!--폭을 다 갖지만 높이는 자식의 노드만큼 가짐-->
+        <dt>제목</dt>
+        <dd>자세한 내용...</dd>
+
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language의 약자 입니다</dd>
+
+        <dt>css</dt>
+        <dd>Design적인 요소를 결정 합니다</dd>
+
+        <dt>javascript</dt>
+        <dd>language적인 요소를 담당 합니다</dd>
+    </dl>        
+    </div>
+</body>
+</html>

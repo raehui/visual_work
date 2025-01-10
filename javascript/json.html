@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json.html</title>
+</head>
+<body>
+    <h1>json 문자열 사용해 보기</h1>
+    <button id="printBtn">출력하기</button>
+
+    <h2>회원정보</h2>
+    <p>
+        번호: <strong id="num"></strong>
+        이름: <strong id="name"></strong>
+        주소: <strong id="addr"></strong>
+    </p>
+
+    <h2>좋아하는 음식 목록</h2>
+    <ul>
+        
+    </ul>
+
+
+    <script>
+        //제이슨 형식을 따르는 문자열
+        //원하는 형식으로 변경이 가능함        
+        const json =`{"num":1, "name": "김구라", "addr":"노량진"}`;
+        const json2 =`["떡볶기","라면","김밥","아이스크림"]`; 
+
+        document.querySelector("#printBtn").addEventListener("click",function(){
+            //회원정보에 정보 넣기
+            //1. 불러올 데이터 타입을 오브젝트로
+            const data=JSON.parse(json);
+            const data2 = JSON.parse(json2);
+            
+            //2. 오브젝트의 각 값을 str의 innerText로
+            document.querySelector("#num").innerText = data.num;
+            document.querySelector("#name").innerText = data.name;
+            document.querySelector("#addr").innerText = data.addr;
+
+            /*
+            내가 한 것
+            //좋아하는 음식 목록 ul에 li 요소 집어넣기
+            //1.불러올 데이터 배열로
+            const data2 = JSON.parse(json2);
+            //2. li 요소 생성하기
+            const li1 = document.createElement("li");
+            const li2 = document.createElement("li");
+            const li3 = document.createElement("li");
+            //3. li안에 데이터 넣기
+            li1.innerText = data2[0];
+            li2.innerText = data2[1];
+            li3.innerText = data2[2];
+            //4.ul에 li 집어넣기
+            document.querySelector("ul").append(li1);
+            document.querySelector("ul").append(li2);
+            document.querySelector("ul").append(li3);
+            */
+
+            //반복문 돌면서
+            for(let i=0;i<data2.length;i++){
+                //li요소를 만들어서
+                const li = document.createElement("li");
+                //i번째에 저장된 문자열로 innerText를 출력하고
+                li.innerText = data2[i];
+                //ul에 li 추가하기
+                document.querySelector("ul").append(li);
+            }
+        });
+        
+    </script>
+</body>
+</html>

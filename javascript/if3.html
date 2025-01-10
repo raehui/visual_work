@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if3.html</title>
+</head>
+<body>
+    <input type="text" id="jumsu" placeholder="점수입력...">
+    <button onclick="jumsu1()">판정하기</button>
+    <p id="result"></p>
+    <script>
+        //판정하기 버튼을 눌렀을때 호출되는 함수
+        function jumsu1(){
+            const jumsu=document.querySelector("#jumsu").value; //입력된 값 선택
+           
+            if(jumsu >= 90){
+                document.querySelector("#result").innerText="A 입니다"; //대상 선택                
+            }else if(jumsu >=80){
+                document.querySelector("#result").innerText="B 입니다";
+            }else if(jumsu >=70){
+                document.querySelector("#result").innerText="C 입니다";
+            }else if(jumsu>=60){
+                document.querySelector("#result").innerText="D 입니다";
+            }else{
+                document.querySelector("#result").innerText="F 입니다";
+                document.querySelector("#result").style.color ="#ff0000";
+                document.querySelector("#result").style.fontSize ="50px";
+            }            
+        }
+        /*
+        1. 입력한 점수를 읽어온다
+
+        2. 입력한 점수를 비교해서 결과를 p 요소의 innerText에 출력한다
+
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function2.html</title>       
+
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        //매개변수 msg에 전달받은 내용을 p요소에 출력하는 함수
+        function printMsg(msg){
+            document.querySelector("#result").innerText =msg;
+        }
+
+        //매개변수 num1,num2에 전달된 숫자를 평균을 구해서 출력하는 함수
+        function printAvg(num1,num2){
+            let avg = (num1+num2)/2;
+            document.querySelector("#result").innerText = num1+" 과 "+num2+" 의 평균:"+avg;
+        }
+                
+        function useFun(msg,f){
+            console.log(msg);
+            f();
+        }
+
+        //함수 매개변수로 받아올 수 있음
+        useFun("click",function(){
+            console.log("호출됨!");
+        });
+
+        //정한 데이터가 아니면 오류 발생
+        // useFun("xxx","yyyy");
+
+
+        useFun("hello",function(){
+            console.log("안녕하세요!");
+        })
+
+        useFun("열심히",function(){
+            console.log("집에 가자!");
+        })
+
+        
+        
+
+    </script>
+</body>
+</html>

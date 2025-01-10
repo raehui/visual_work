@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example.html</title>
+    <style>
+        #rabbit{
+            transition: margin-left 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="moveBtn" >움직이기</button>
+    <button id="moveBtn2" >움직이기2</button>
+    <button id="restBtn">리셋</button>
+    <br>
+    <img id="rabbit" src="images/rabbit_1.png">
+    <!-- <img id="rabbit_1" src="images/rabbit2.png"> -->
+    <script>
+        //버튼을 눌렀을 때 실행할 함수 등록
+        let mLeft =0;
+        let count=0;
+        
+        //토끼를 출력하는 img 요소의 참조값을 얻어와서 상수에 담아두기
+        //상수로 설정해서 읽기전용으로 불러옴
+        const rabbitImg = document.querySelector("#rabbit");
+
+        //변경할 src를 배열에 미리 순서대로 준비한다.
+        const images =["images/rabbit_1.png","images/rabbit2.png"];
+        //출력할 인덱스를 관리할 변수만들고 0으로 초기화
+        let idx =0;
+
+
+        document.querySelector("#moveBtn2").addEventListener("click",function(){
+            mLeft += 100;
+            rabbitImg.style.marginLeft = mLeft+"px";
+            //인덱스를 1 증가시키고 
+            idx++;
+            //만일 존재하지 않은 인덱스라면 
+            if(idx==2){
+                //0으로 초기화
+                idx=0;
+            }
+            rabbitImg.setAttribute("src",images[idx]);
+        });
+
+        document.querySelector("#moveBtn").addEventListener("click",function(){                        
+            mLeft +=100;           
+            rabbitImg.style.marginLeft = mLeft+"px";                        
+            
+            //토끼 이미지 2로 변경되기                                
+            count=count+1;
+            if(count%2==1){
+                document.querySelector("#rabbit").setAttribute("src","images/rabbit2.png");
+            }else{
+                document.querySelector("#rabbit").setAttribute("src","images/rabbit_1.png");
+            }
+            
+
+            //이미지 변경 구라티
+            //현재 src 속성의 value 값을 읽어온다.
+            const src= rabbitImg.getAttribute("src"); //속성값 읽어오기
+            //이미지 변경
+            if(src=="images/rabbit_1.png"){
+                rabbitImg.setAttribute("src","images/rabbit2.png");//속성을 변경할 수 있음 , 키값을 수정 못하는 거지 안의 물건은 수정가능!
+            }else{
+                rabbitImg.setAttribute("src","images/rabbit_1.png");
+            }
+                            
+        });
+        
+        //리셋버튼
+        document.querySelector("#restBtn").addEventListener("click",function(){
+            rabbitImg.style.marginLeft="0px";
+            mLeft=0;
+            count=0;
+        });
+
+    </script>
+
+    
+</body>
+</html>

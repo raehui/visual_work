@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop3.html</title>
+</head>
+<body>
+    <h1>정호T Quiz</h1>
+    <input type="text" name="Quiz5" id="Quiz5" placeholder="문자열을 입력하세요.">
+    <button onclick="number5()">5번 버튼</button>
+    <button id="saveBtn">저장</button>
+    <script>
+        //글로벌에 작성 안하고 5번 작성
+        
+        (function(){
+            let num5=[];
+            document.querySelector("#saveBtn").addEventListener("click",function(){
+                let num = document.querySelector("#Quiz5").value;
+                num5.push(num);
+
+        })();
+        }); 
+        //데이터를 즉석에서 만들어서 전달 + 동작공간이 같이 존재함
+        //약속된 이벤트명(string)에서 선택해야함
+        //나중에 호출된 함수라고 해서 call back함수라고 함
+
+
+
+
+        //1. 빈 배열을 만들고 배열에 숫자 0~9를 순서대로 저장해 보세요.
+        let num=[];
+        for(let i=0;i<10;i++) {
+            //push()함수를 이용해서 차례대로 저장하기
+            num.push(i);
+            
+            //i번째 인덱스에 i를 저장하기
+            //num[i]=i;
+        }
+
+        //2. 빈 배열을 만들고 배열에 숫자 1~10를 순서대로 저장해 보세요.
+        let num1=[];
+        for(let i=0;i<10;i++) {
+            num1.push(i+1);
+        }
+
+        //3. 빈 배열을 만들고 배열에 숫자 1~100를 순서대로 저장해 보세요.
+        let num3=[];
+        for(let i=0;i<100;i++){
+            num3.push(i+1);
+        }
+       
+        //4. 빈 배열을 만들고 배열에 숫자 1~100를 순서대로 저장한 다음
+        //모든 숫자의 합을 콘솔창에 출력해 보세요.
+        let num4=[];        
+        for(let i=0;i<100;i++){
+            num4.push(i+1);    
+        }
+
+        //숫자를 모두 더해서 누적시킬 변수 만들고 0으로 초기화
+        let sum=0;
+        
+        for(let j=0;j<num4.length;j++){//누적합
+            sum = sum+num4[j];
+            //sum +=num4[j];                
+        }
+        console.log("1~100의 합계:"+sum);
+        
+        //5. input요소와 button을 배치하고
+        //input요소에 문자열을 입력하고 button을 누르면
+        //입력한 문자열이 빈 배열에 계속 누적 되도록 프로그래밍 해 보세요.
+        let num5=[];//계속을 유지되기 위해서는 global영역에 작성해야 한다
+
+        function number5(){//함수가 실행될 때마다 변수 초기화
+            let num = document.querySelector("#Quiz5").value;
+            num5.push(num);                   
+        }
+
+
+
+
+    </script>
+</body>
+</html>

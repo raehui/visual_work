@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch.html</title>
+</head>
+<body>
+    <h1>switch 문</h1>
+    무기 선택
+    <select id="weapon">
+        <option value="">선택</option>
+        <option value="sword">칼</option>
+        <option value="gun">총</option>
+        <option value="arrow">활</option> 
+    </select>
+    <button onclick="attack2()">Attack</button>
+    <p id="result"></p>
+    <script>
+        function attack(){
+            let weapon=document.querySelector("#weapon").value; //const
+            
+            if(weapon=='sword'){
+                document.querySelector("#result").innerText="칼을 선택했습니다.";
+            }else if(weapon=='gun'){
+                document.querySelector("#result").innerText="총을 선택했습니다.";
+            }else if(weapon=='arrow'){
+                document.querySelector("#result").innerText="활을 선택했습니다.";
+            }else{
+                document.querySelector("#result").innerText="무기를 선택해주세요.";
+            }
+        }
+
+        function attack1(){
+            let weapon=document.querySelector("#weapon").value;
+            if(weapon !==''){
+                document.querySelector("#result").innerText = weapon +"을 선택했습니다.";
+            }else{
+                document.querySelector("#result").innerText="무기를 선택해주세요.";
+            }
+        }
+
+        function attack2(){
+            let weapon=document.querySelector("#weapon").value;
+            switch(weapon){
+                case "gun":
+                    document.querySelector("#result").innerText="총을 선택했습니다.";
+                    break;
+                case "sword":
+                    document.querySelector("#result").innerText="칼을 선택했습니다.";
+                    break;
+                case "arrow":
+                    document.querySelector("#result").innerText="활을 선택했습니다.";
+                    break;
+                default:
+                    document.querySelector("#result").innerText="무기를 선택해주세요.";
+            }
+        }
+
+        //if else문, 무기 선택 후 -> 총으로 공격한다...p의 innerText
+        //attack
+        /*
+            1. 무기 선택 아니면 공백 선택
+            2. 무기 선택하면 p값에 요소에 문구 띄게끔
+            3. 공백 선택하면 p값에 무기를 선택해주세요 문구 띄게끔
+        */
+    </script>
+</body>
+</html>

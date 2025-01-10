@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_form3.html</title>
+</head>
+<body>
+    <div class="container">
+        <h1>html5에서 추가된 폼 요소</h1>
+        <p>
+            웹브라우저의 종류와 버전별로 지원이 될수도 있고 안될수도 있다.
+            <a href="https://caniuse.com">여기서 확인</a>
+        </p>
+        <form action="send">
+            색상선택 <input type="color" name="color">
+            <br>
+            범위선택 <input type="range" name="range" min="0" max="100" step="10" value="50">
+            <br>
+            날짜선택 <input type="date" name="date">
+            <br>
+            시간선택 <input type="time" name="time">
+            <br>
+            날짜, 시간선택 <input type="datetime-local" name="datetime">
+            <br>
+            숫자 <input type="number" name="number" min="0" max="10" step="1">
+            <br>
+            <button type="submit">제출 </button>
+        </form>
+    </div>
+</body>
+</html>

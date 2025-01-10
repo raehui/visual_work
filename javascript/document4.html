@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document4.html</title>
+</head>
+<body>
+    <button id="addBtn">토끼 추가</button>
+    <button id="resetBtn">Reset</button>
+    <div class="wrapper"> <!--document.wrapper-->
+        <img src="images/rabbit_1.png">
+    </div>
+    <script>
+        document.querySelector("#addBtn").addEventListener("click",function(){
+            /* 나의 코드
+            //1.토끼 요소 선택
+            const rabbit =document.querySelector(".wrapper").value;
+            //2. 옆에 요소를 만들어서
+            const img = document.createElement("img");
+            //3. img 요소 안에 토끼 요소 넣기
+            img.value =rabbit;
+            //4. .wrapper 요소에 img 추가하기
+            document.querySelector(".wrapper").append(img)
+            */
+            
+            //1. img 요소 만들기
+            const img = document.createElement("img");
+            //2. 만든 img요소에 src 추가하기
+            img.setAttribute("src","images/rabbit_1.png") // 속성값 추가하기
+            //3. .wrapper 요소에 img 추가하기
+            document.querySelector(".wrapper").append(img)
+        });
+
+        document.querySelector("#resetBtn").addEventListener("click",function(){
+            document.querySelector(".wrapper").innerText="";
+        });
+        
+    </script>
+</body>
+</html>

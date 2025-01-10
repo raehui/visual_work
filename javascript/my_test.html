@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_test.html</title>
+</head>
+<body>
+    <script>
+
+        function test(){
+            console.log("test() 호출됨");
+            //return undefined;
+            //return;           
+        }
+        //number type을 리턴하는 함수
+        function getNum(){
+            console.log("getNum() 호출됨");
+            return 999;
+        }
+
+        //number type을 리턴하는 함수
+        function getNum2(){
+            let num=999;
+            console.log("getNum() 호출됨");
+            //변수 안에 있는 값을 변수명으로 리턴해 줄수도 있다.
+            return num;
+        }
+        /*
+            함수명 : getName
+            리턴되는 값 : kimgura라는 문자열
+            위의 조건에 맞는 함수를 만들어 보세여.
+        */
+        function getName(){
+            console.log("getName() 호출됨");
+            return "kimgura";
+        }
+
+        function getName2(){
+            let name="kimgura";
+            console.log("getName() 호출됨");
+            return "kimgura";
+        }
+
+        //boolean type을 리턴하는 함수
+        function isEven(){
+            console.log("isEven() 호출됨");
+            return true;
+        }
+
+        //object type을 리턴하는 함수
+        function getMember(){
+            console.log("getMember() 호출됨");
+            let mem ={num:1, name:"김구라",addr:"노량진"};
+            return mem;
+        }
+
+        //array type을 리턴하는 함수
+        function getFriends(){
+            console.log("getFriend() 호출됨");
+            let friends =["김구라","해골","원숭이","주뎅이","덩어리"];
+            return friends;
+        }
+
+        //테스트용 object 만들기
+        //함수도 데이터니 데이터가 들어갈 수 있는 모든 공간에 들어갈 수 있음
+        let myObj ={
+            getData:function(){
+                let data = {num:1, name:"김구라"};
+                return data;
+            },
+            getDatas:function(){
+                let datas=["라면","치킨","피자"];
+                return datas;
+            }
+        };
+
+        let a = myObj;
+        let bbb=
+        참조가 
+        
+        /*my Obj 예상
+        myObj ={
+            getData: {num:1, name:"김구라"},
+            getDatas: ["라면", "치킨","피자"]
+
+            }   
+        */
+
+        /*
+            myObj 오브젝트 안에 key값이 getData, getDatas 이고
+            각각 value로 함수가 들어가 있음
+
+            그러면 value에 있는 함수를 실행할려면?
+            오브젝트 안 .key로 value를 참조하고 ()로 호출(실행시킴)
+            myObj.getdata()
+            myObj.getdats()
+
+        */
+    </script>
+</body>
+</html>

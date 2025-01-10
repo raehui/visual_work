@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의정보</title>
+    <style>
+        h1{
+            color:rgb(14, 102, 33);
+            border-bottom: 2px solid rgb(14, 102, 33);
+            text-align: center;
+            font-size: 2.5rem;
+            padding-bottom: 10px;
+        }
+        ul{
+            max-width:500px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            list-style-type: square;
+        }
+        li{
+            font-size: 1.2rem;
+            background-color: #9dec98;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+             
+        }
+        li:hover{
+            background-color: #c8e6c9;
+            transform: scale(1.05);            
+        }
+        p{
+            text-align: center;
+            color: #555;
+            line-height: 1.6;
+        }
+        /* 버튼 스타일 */
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>나의 버킷리스트</h1>
+    <ul>
+        <li>번지 점프</li>
+        <li>스카이 다이빙</li>
+        <li>책 10,000권 읽기</li>
+        <li>유럽여행</li>
+    </ul>
+    <button>버킷 추가</button>
+    <p>죽기 전에 한번은 해봐야 겠지? <br> 단 번지 점프랑 스카이 다이빙 제외 </p>
+    <script>
+        
+        //버튼이 클릭될 때마다 함수가 실행됨(시점변경)
+        //사용자와 상호소통
+
+        document.querySelector("button").addEventListener("click",function(){
+            
+            let input = prompt("하고 싶은 일을 입력하세요!");
+
+            //1. 새로운 li 요소를 만들어서
+            //함수의 값이 리턴되어 돌아옴 
+            let box = document.createElement("li");
+            //2. li 요소안에 입력한 문자열을 출력하고
+            //input 변수의 값은 box에 추가하기
+            box.innerText = input;
+            //3. li 요소를 ul의 자식 요소를 추가하기
+            //이미 만들어진 값을 가져오기
+            document.querySelector("ul").append(box);
+        }); // 버튼 클릭시 input 변수에 텍스트로 받아오기
+            //  li요소(공간) 생성 후 box 변수에 삽입 - box 공간 생김
+            // box 공간에 input(변수) 채우기
+            // ul요소에 box 추가하기 
+
+    </script>
+</body>
+</html>

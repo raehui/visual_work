@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array.html</title>
+</head>
+<body>
+    <h1>array type  사용해 보기</h1>
+    <script>
+        let foods =["떡뽁기","김밥","라면"];
+
+        let name =["김구라","해골","원숭이","주뎅이","덩어리"];
+
+        //음식의 0 순위를 food1이라는 변수에 담아 보세요.
+        let food1 = foods[0];
+        
+        //이름의 1 순위를 name1이라는 상수에 담아 보세요.
+        const name1 = name[1];
+       
+        //음식의 2순위를 "튀김"으로 변경해 보세요.
+        foods[2]="튀김";
+       
+        //이름의 3순위를 "이주환"으로 변경해 보세요.
+        name[3] ="이주환";
+        
+        //음식의 3순위에 "짬뽕"을 추가해 보세요.
+        // foods[3] ="짬뽕";
+        foods.push("짬뽕");
+
+        //음식의 갯수를 size라는 상수에 담기
+        const size=foods.length;
+    </script>
+</body>
+</html>

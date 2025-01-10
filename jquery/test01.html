@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test01.html</title>
+</head>
+<body>
+    <p>p1</p>
+    <p class="my-class">p2</p>
+    <p class="my-class">p3</p>
+    <p class="my-class">p4</p>
+    <p id="one">p5</p>
+ 
+    <button id="changeBtn">change</button>
+    <button id="changeBtn2">change2</button>
+    <script>
+        //위 버튼을 눌렀을 때 모든 p 요소의 innerText 를 "changed!"로 변경해 보세요
+        document.querySelector("#changeBtn").addEventListener("click",()=>{
+            //모든 p요소의 참조값을 배열에 담긴체로 리턴받기
+            const ps=document.querySelectorAll("p");
+            for(let i=0;i<ps.length;i++){
+                ps[i].innerText="changed";
+            }          
+        });
+   </script>
+    <!--jquery 로딩으로 외부의 자바스크립트를 가져옴-->
+    <!--$(선택자).action().action2()-->
+    <!--$(): 함수, 선택자 : 요소-->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+   <script>
+        //on 동작을 설정함
+        //반복문이 내장되어 있음
+        $("#changeBtn2").on("click",()=>{
+             //jquery의 특수한 배열로 가져와서 작업
+            $("p").text("changed");
+        });
+        
+        
+   </script>
+</body>
+</html>

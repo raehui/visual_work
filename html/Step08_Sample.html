@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Shopping Mall</title>
+  <style>
+    /* 기본 스타일 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* 헤더 스타일 */
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* 메인 스타일 */
+    main {
+      padding: 20px;
+    }
+
+    .hero {
+      background-color: #e8f5e9;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #4CAF50;
+    }
+
+    /* 상품 목록 스타일 */
+    section.products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .product h3 {
+      margin: 15px 0;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .product button:hover {
+      background-color: #45a049;
+    }
+
+    /* 푸터 스타일 */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <h1>My Shopping Mall</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main>
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+      <h2>Welcome to the Best Shopping Experience!</h2>
+      <p>Find the latest deals and amazing products just for you.</p>
+    </section>
+
+    <!-- 상품 목록 -->
+    <section id="products" class="products">
+      <article class="product">
+        <img src="https://via.placeholder.com/250" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$20.00</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="product">
+        <img src="https://via.placeholder.com/250" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$35.00</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="product">
+        <img src="https://via.placeholder.com/250" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$15.00</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="product">
+        <img src="https://via.placeholder.com/250" alt="Product 4">
+        <h3>Product 4</h3>
+        <p>$50.00</p>
+        <button>Add to Cart</button>
+      </article>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>&copy; 2024 My Shopping Mall. All rights reserved.</p>
+  </footer>
+</body>
+</html>

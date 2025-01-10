@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json2.html</title>
+    <style>
+        td{
+            max-width: 500px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <h1>json 문자열 활용</h1>    
+    <button id="getBtn">글 받아오기</button>
+    <h2>글정보</h2>     
+    <div class="wrapper">
+        <table border="1">
+            <colgroup>
+                <col width="100">
+                <col width="500">
+                <col width="200">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        let id=0;            
+        document.querySelector("#getBtn").addEventListener("click",function(){            
+            id++;           
+            fetch("https://koreanjson.com/posts/"+id) //fetch 함수로 요청
+            .then(function(res){
+                //응답된 문자열이 json형식이면 res.json()을 리턴하고
+                //그외의 형식이면 res.text()를 리턴하면 된다.
+                return res.json();//object로 데이터 들어옴
+            })
+            .then(function(data){//object로 문자열을 받아옴 
+                //data는 글 하나의 정보를 가지고 있는 object이다.
+                console.log(data); //typeof로 데이터 타입 확인하기
+                // //글정보를 이용해서 tr 문자열을 구성한다
+                const tr=`
+                    <tr>
+                        <td>${data.id}</td>
+                        <td>${data.title}</td>
+                        <td>${data.createdAt}</td>
+                    </tr>    
+                `;
+                // //tbody에 html로 해석되게끔 넣어준다
+                // // document.querySelector("tbody").innerHTML=tr;
+                document.querySelector("tbody").insertAdjacentHTML("beforeend",tr); //겹치지 않게 넣기
+                
+                //위에서 res.json()를 리턴하면 데이터는 object이고 - parse를 진행함
+                //위에서 res.text()를 리턴하면 데이터는 string이다
+                //data는 글 하나의 정보를 가지고 있는 object이다.
+
+
+            });
+        });
+    </script>
+</body>
+</html>

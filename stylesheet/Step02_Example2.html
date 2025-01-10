@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 연습 페이지</title>
+    <link rel="stylesheet" href="css/mytest.css">
+</head>
+<body>
+    <header>
+        <h1>CSS 선택자 연습</h1>
+        <p class="subtitle">다양한 선택자를 실습해 보세요!</p>
+    </header>
+
+    <main>
+        <section id="basic-selectors">
+            <h2>1. 기본 선택자</h2>
+            <p>태그 선택자, 클래스 선택자, ID 선택자를 연습해 보세요.</p>
+            <div id="example-box">
+                <p class="highlight">이 문장은 클래스 선택자를 사용합니다.</p>
+                <p>이 문장은 태그 선택자를 사용합니다.</p>
+                <p id="special">이 문장은 ID 선택자를 사용합니다.</p>
+            </div>
+        </section>
+
+        <section id="nested-selectors">
+            <h2>2. 중첩된 선택자</h2>
+            <div class="parent">
+                <p>부모 요소 내부</p>
+                <div class="child">
+                    <p>자식 요소 1</p>
+                    <p>자식 요소 2</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pseudo-classes">
+            <h2>3. 가상 클래스 선택자</h2>
+            <ul>
+                <li>첫 번째 항목</li>
+                <li>두 번째 항목</li>
+                <li>세 번째 항목</li>
+            </ul>
+            <button>호버 또는 포커스를 테스트하세요</button>
+        </section>
+
+        <section id="advanced-selectors">
+            <h2>4. 복잡한 선택자</h2>
+            <p><span>이 문장에는 <strong>중첩된</strong> 요소가 있습니다.</span></p>
+            <p class="highlight">CSS로 이 텍스트를 스타일링해 보세요!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CSS 선택자 연습 페이지</p>
+    </footer>
+</body>
+</html>

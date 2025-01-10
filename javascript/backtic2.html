@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backtic2.html</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <div class="wrapper2"></div>
+    <div class="wrapper3"></div>
+    
+    <script>
+        //대입한 문자열이 단순히 문자열로 출력된다.
+        document.querySelector(".wrapper").innerText ="<img src = 'images/kim1.png'>"; 
+        
+        //대입한 문자열이 html로 평가되어서 해석이 된다 (img 요소가 만들어진다)
+        //html로 만들어서 해석하는 게 편할 때도
+        //html 요소로 생성
+        document.querySelector(".wrapper2").innerHTML ="<img src = 'images/kim1.png'>"; 
+
+        //요소에서 사용될 정보
+        let data ="images/kim1.png";
+        document.querySelector(".wrapper3").innerHTML =`<img src = "${data}">`;
+                
+    </script>
+</body>
+</html>
