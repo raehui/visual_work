@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg">
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+
+    </ul>
+    <!--jquery 로딩-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $("#addBtn").on("click",()=>{
+            //input 요소에 입력한 문자열 읽어오기
+            let text=$("#inputMsg").val();
+            //li 요소를 만들어서 innetText 로 출력하고 id가 msgList인 요소의 자식요소로 추가하기
+            $("<li>").text(text).appendTo("#msgList");
+           
+            
+        });
+    </script>
+</body>
+</html>

@@ -11,6 +11,7 @@
     <p class="my-class">p3</p>
     <p class="my-class">p4</p>
     <p id="one">p5</p>
+    <input type="text" id="inputMsg">
  
     <button id="changeBtn">change</button>
     <button id="changeBtn2">change2</button>
@@ -33,6 +34,8 @@
         //반복문이 내장되어 있음
         $("#changeBtn2").on("click",()=>{
              //jquery의 특수한 배열로 가져와서 작업
+             //$()해당 문서 객체가 모두 찾아져서 []배열에 담긴체로 리턴된다
+             //jquery 를 사용할 수 있는 특수한 배열
             $("p").text("changed");
         });
         

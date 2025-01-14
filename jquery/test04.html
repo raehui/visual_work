@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+    <style>
+        .wrapper{
+            display: flex;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+            cursor: pointer;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">div1</div>
+        <div class="box">div2</div>
+        <div class="box">div3</div>
+        <div class="box">div4</div>
+        <div class="box">div5</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        //box요소에 이벤트 리스너가 모두 등록
+        $(".box").on("click",(e)=>{
+            $(e.target).text("clicked!").css("backgroundColor","green");
+        }); 
+
+        /*
+        //클래스명이 box인 모든 요소의 참조값을 배열에 담긴체로 얻어내기
+        const boxs=document.querySelectorAll(".box");
+        //반복문을 돌면서 모든 div 에 "click" 리스너 등록
+        for(let i=0;i<boxs.length;i++){
+            //함수 5개가 각각 하나의 Listener 를 등록하기
+            boxs[i].addEventListener("click",(e)=>{
+                //이벤트가 발생한 바로 그요소의 innerText 만 "clicked"로 변경 한다.
+                e.target.innerText="clicked";
+                //배경색도 변경
+                e.target.style.backgroundColor="green";
+            });
+        }
+        */
+       
+       
+    
+
+
+    </script>
+</body>
+</html>
