@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+</head>
+<body>
+    <script>
+        //검증할 문자열
+        const source="Hello World!";
+        //정규 표현식 객체 만들기
+        const reg= /Hello/; //만드는 방법1
+        const reg2=new RegExp("Hello"); //만드는 방법2
+        
+        //검증할 문자열이 정규 표현식과 매칭 되는지 여부(일치하는 문자열이 하나라도 있는지 여부)
+        //검증할 문자열을 넣어주면 일치하는 문자열이 있는지 확인
+        //test 함수는 있는지 검증
+        const result=reg.test(source); //true 혹은 false 를 리턴한다.
+        const result2=reg2.test(source);
+
+    </script>
+</body>
+</html>
