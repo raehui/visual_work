@@ -15,7 +15,8 @@
         const source3="Tuesday";
 
         //아무거나 3글자가 있는지 여부를 판별할 수 있다.
-        //5글자가 있어도 3글자가 있으니 true이다.
+        //3글자 이상이면 true
+        //test 는 first match
         const reg1=/.../;
         const result1=reg1.test(source);
 
@@ -24,6 +25,7 @@
         const result2_2=reg2.test(source2); //true
         const result2_3=reg2.test(source3); //true
 
+        //아무거나 3글자로 시작하고 day로 끝나야함
         const reg3=/^...day$/;
         const result3=reg3.test(source); //true
         const result3_2=reg3.test(source3); //false

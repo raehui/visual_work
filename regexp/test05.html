@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test05.html</title>
+    <style>
+        input{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>정규 표현식 활용 예제</h1>
+    <input type="text" id="source" placeholder="문자열 입력...">
+    <input type="text" id="reg" placeholder="정규표현식 작성...">
+    <button id="extractBtn">추출</button>
+    <ul id="list">
+
+    </ul>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script>
+        $("#extractBtn").click(()=>{
+            //ul에 빈 문자열을 강제로 넣어줘서 ul 비우기
+            $("#list").text("");
+            //source 문자열 읽어오기
+            const source=$("#source").val();
+            // 입력한 문자열 읽어오기 
+            const regsource=$("#reg").val();
+            //정규 표현식 객체 만들기 
+            const reg=new RegExp(regsource,"g");
+
+            while(true){
+                // const reg=new RegExp(regsource,"g");
+                const match=reg.exec(source);
+                if(match==null) break;
+                $("<li>").text(match[0]).appendTo("#list");
+            }                  
+        });
+        
+    </script>
+</body>
+</html>

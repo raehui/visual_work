@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test.05.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="addBtn">class 추가</button>
+    <button id="removeBtn">class 제거</button>
+    <button id="toggleBtn">class 토글</button>
+    <div id="mybox">box</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $("#addBtn").on("click",()=>{
+            //css 요소를 추가할 때는 addClass
+            $("#mybox").addClass("box");
+        });
+        $("#removeBtn").on("click",()=>{
+            $("#mybox").removeClass("box");
+        });
+        //줄여서 사용 가능함
+        $("#toggleBtn").click(()=>{
+            $("#mybox").toggleClass("box");
+        });       
+    </script>
+</body>
+</html>

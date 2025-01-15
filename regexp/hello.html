@@ -12,12 +12,20 @@
         //정규 표현식 객체 만들기
         const reg= /Hello/; //만드는 방법1
         const reg2=new RegExp("Hello"); //만드는 방법2
-        
+
+        //정규표현식 문자열
+        const str="^Hello"
+        //str 변수 안에 있는 값을 이용해서 정규표현식 객체를 만들기
+        //문자열 안에 있는 걸 가르킬 수 없음, 변수 안에 있는 경우에는 new 사용하기
+        //const reg3=/str/;
+        const reg3=new RegExp(str);
+
         //검증할 문자열이 정규 표현식과 매칭 되는지 여부(일치하는 문자열이 하나라도 있는지 여부)
         //검증할 문자열을 넣어주면 일치하는 문자열이 있는지 확인
         //test 함수는 있는지 검증
         const result=reg.test(source); //true 혹은 false 를 리턴한다.
         const result2=reg2.test(source);
+        const result3=reg3.test(source);//true
 
     </script>
 </body>

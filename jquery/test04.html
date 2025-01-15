@@ -7,6 +7,7 @@
     <style>
         .wrapper{
             display: flex;
+            flex-direction: row;
         }
         .box{
             width: 100px;
@@ -30,7 +31,14 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script>
         //box요소에 이벤트 리스너가 모두 등록
+        //클래스명이 box 인 요소에 "click" 이벤트가 발생할 때 실행할 함수 등록
+        //jquery 가 탑재된 배열은 각각의 요소에 리스너 함수를 등록이 가능함 
         $(".box").on("click",(e)=>{
+            //e.target 은 "click" 이벤트가 일어난 바로 그요소의 참조값이다.
+            //e.target 을 $() 함수에 넣었기 때문에 jquery 의 동작을 사용할 수가 있다.
+            
+            //e.target은 코딩 시점에는 알수 없고 이벤트가 발생한 이후에 정해짐
+            //이벤트가 발생한 이후에 선택되게끔 하고싶을 때 사용
             $(e.target).text("clicked!").css("backgroundColor","green");
         }); 
 

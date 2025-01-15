@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+</head>
+<body>
+    <ul>
+
+
+    </ul>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        const source="kimgura is kimgura or leegura is leegura";
+        //위의 문자열에서 단어만 추출해서 ul에 출력해 보세요.
+        //li의 innerText로
+        const reg1=/[^ ]+/g;
+        while(true){
+            const match=reg1.exec(source);           
+            if(match==null) break;
+            //새로운 li 요소를 만든 다음 innerText 로 출력한 다음 ul의 자식요소로 새로운 li 요소를 추가하기
+            $("<li>").text(match[0]).appendTo("ul");
+
+                
+        }
+
+    </script>
+</body>
+</html>

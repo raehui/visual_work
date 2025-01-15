@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03.html</title>
+</head>
+<body>
+    <script>
+        const source="kimgura is kimgura or leegura is leegura";
+        const reg1=/gura/g; //global  전체에서 다 찾겠다
+        //위의 정규표현식 객체를 new를 이용해서 만들면 아래와 같다
+        const reg1_2=new RegExp("gura","g");
+        
+        const reg2=/...gura/g;
+        const reg2_2=new RegExp("...gura","g");
+
+        //source 문자열로부터 reg1에 매칭되는 모든 문자열을 찾아서 콘솔창에 순서대로 출력하기
+        while(true){
+            const match=reg1.exec(source);
+            if(match==null) break;
+            console.log(match[0]);
+        }
+        
+        //source 문자열로부터 reg2에 매칭되는 모든 문자열을 찾아서 콘솔창에 순서대로 출력하기
+        while(true){
+            const match=reg2.exec(source);
+            if(match==null) break; 
+            console.log(match[0]);
+        }
+        
+
+    </script>
+</body>
+</html>
