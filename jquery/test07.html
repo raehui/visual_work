@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test06.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="showBtn">보이기</button>
+    <button id="hideBtn">숨기기</button>
+    <button id="toggleBtn">토글</button>
+    <div class="box" id="mybox"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $("#showBtn").click(()=>{
+            $("#mybox").show(1000); //1000은 애니메이션 동작, 애미메이션동작은 0.5초나 1초를 넘기면 답답함
+        });
+        $("#hideBtn").click(()=>{
+            $("#mybox").hide(1000,()=>{
+                alert("뿅~"); //시간 경과 이후에 원하는 동작을 설정 
+            }); 
+        });
+        $("#toggleBtn").click(()=>{
+            $("#mybox").toggle({
+                //.toggle(1000) 과 동일함
+                duration:1000,
+                //complete 함수 작성 , value가 함수인 경우
+                complete:()=>{
+                    alert("toggled!");
+                } 
+            });
+            //함수 호출하면서 object 를 전달해서 안에 여러개가 존재하는 경우
+            //object 안에 키 : value 전달하기 
+        });
+
+    </script>
+</body>
+</html>
