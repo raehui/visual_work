@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_map.html</title>
+</head>
+<body>
+    <ul id="list">
+
+    </ul>  
+    <script>
+        const names=["김구라","해골","원숭이"];
+        //배열의 아이템의 갯수만큼 즉시 호출된다.
+        const result =names.map((item)=>{
+            /*
+                - 배열.map() 함수
+
+                mpa 함수 안에 전달한 함수에서 리턴한 값으로 새로운 배열을 만들어서
+                리턴하는 함수
+            */
+            return `${item}님`;
+        });
+        //람다식 모양으로도 사용 가능
+        const result2=names.map(item=>`${item}님`);
+        //html 형식의 문자열을 여러개 가지고 있는 배열도 만들 수 있다.
+        const result3=names.map(item=>`<li>${item}</li>`);
+
+        //map 의 item과 forEach의 item은 다름
+        names.map(item=>`<li>${item}</li>`).forEach(item=>{
+            document.querySelector("#list").insertAdjacentHTML("beforeend",item);
+        });
+    </script>
+</body>
+</html>

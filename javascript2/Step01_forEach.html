@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_forEach.html</title>
+</head>
+<body>
+    <h1>친구 목록</h1>
+    <ul id="list">
+
+    </ul>
+    <script>
+        const names=["김구라","해골","원숭이"];
+        //.map(), concat(), filter(), reduce(),forEach()
+
+        //함수가 언제 호출되는지? 전달한 즉시 아이템의 갯수만큼 호출됨 + 배열에 저장된 아이템을 전달한다.
+        names.forEach((item,index)=>{ //알고싶은 정보를 매개변수에 전달
+            console.log(item);
+            //beforeend : ul 이 끝나기 전
+            //insertAdjacentHTML html로 해석하면서 원하는 곳에 출력할 때 사용
+            document.querySelector("#list").insertAdjacentHTML("beforeend",`<li>${item} ${index}</li>`);
+        });
+    </script>
+</body>
+</html>
