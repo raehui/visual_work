@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_concat.html</title>
+</head>
+
+<body>
+    <script>
+
+        const names = ["김구라", "해골", "원숭이"];
+        //기존 배열에 item을 추가한 새로운 배열을 리턴한다.
+        const result1 = names.concat("주뎅이");
+        const result2 = names.concat("주뎅이", "덩어리");
+        
+        //concat() 함수를 대신할 수 잇는 표현식도 있다.
+        //...은 기존의 걸 펼치는 느낌
+        const result3=[...names,"주뎅이"];
+    </script>
+</body>
+
+</html>
