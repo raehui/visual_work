@@ -30,7 +30,20 @@
         ];
         
         //위의 배열의 오름차순 정렬
-        const result1=phones.price.sort((one,two)=>one-two);
+        //각각의 object가 one, two 에 들어감
+        // phones.sort((one,two)=>one.price-two.price);
+        
+        
+        phones.sort((one,two)=>{
+            console.log(one);
+            console.log(two);
+            console.log("---------");
+            return one.price-two.price; //0보다 큰지 작은지로 
+
+        });
+
+
+
     </script>
 </body>
 </html>
