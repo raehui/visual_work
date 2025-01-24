@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_class3.html</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this._name=name; 
+            }
+            get name(){
+                return this._name+"님";
+            }
+        }
+        const p1=new Person("김구라");
+        console.log(p1.name); //김구라님 , 값을 가져갈 때는 get이 동작함
+
+        class Rect{
+            constructor(width,height){
+                this.width=width;
+                this.height=height;
+            }
+
+            get area(){
+                return this.width*this.height;
+            }
+        }
+
+        const r1=new Rect(10,20);
+        console.log(`면적은:${r1.area}입니다.`) //값을 가져갈 때는 get 동작
+
+        class Phone{
+            set name(value){
+                this._name=value+"폰";
+            }
+            get name(){
+                return this._nama;
+            }
+        }
+        
+        const phone1=new Phone();
+        phone1.name="android"; //값을 넣을 때는 set이 동작
+        console.log(phone1.name); //값을 가져갈 때는 get이 동작
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_class2.html</title>
+</head>
+<body>
+    <script>
+        // 클래스 상속도 가능할까?
+        class Animal{
+            constructor(name){
+                this.name=name;
+            }
+            speak(){
+                console.log(`${this.name}이 소리를 냅니다.`);
+            }
+        }
+
+        class Dog extends Animal{
+            //이름과 혈통을 전달받은 생성자
+            constructor(name,breed){
+                super(name); //부모 클래스의 생정자 호출하면서 필요한 값 전달, 부모의 메서드 사용 가능
+                this.breed=breed;
+
+            }
+            run(){
+                console.log(`${this.name},${this.breed}가 달려요!`);
+            }
+        }
+
+        const d1=new Dog("아리","폼피츠");
+        d1.speak();
+        d1.run();
+
+    </script>
+</body>
+</html>
