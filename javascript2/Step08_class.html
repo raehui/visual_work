@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_class.html</title>
+</head>
+<body>
+    <script>
+        //javascript 에도 class 개념이 있다.
+        class Car{
+            //class 메소드
+            drive(){
+                console.log("달려요!");
+            }
+        }
+        //단지 타입을 let으로 받는 점이 다름
+        //Car 클래스로 객체를 생성해서
+        let c1=new Car();
+        //class 메소드 호출하기
+        c1.drive();
+
+        class Person{
+            //static 메소드
+            static showInfo(){
+                console.log("사람입니다.");
+            }
+            sing(){
+                console.log("노래를 합니다.");
+            }
+        }
+        //class 메소드는 객체를 생성해서 참조값 제출
+        new Person().sing();
+        //static 메소드는 클래스명에 . 찍어서 호출
+        Person.showInfo();
+
+        class Phone{
+            //생성자(다중정의가 필요 없음)
+            constructor(name,num,addr){
+                console.log("Phone 생성자 호출됨");
+                this.name=name; //필드를 직접 선언하지 않아도 자동으로 필드를 제작함
+            }
+
+            call(){
+                console.log(this.name+"전화를 걸어요!"); //this 생략 불가
+            }
+        }
+
+        const p1=new Phone("iphone");
+        const p2=new Phone("android");
+        
+        p1.call();
+        p2.call();
+    </script>
+</body>
+</html>

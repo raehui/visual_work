@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_function.html</title>
+</head>
+<body>
+    <script>
+        //함수의 매개변수를 선언할 때 default 값을 지정할 수 있다.
+        function showInfo(num=0,name="이름",addr="주소"){ //매개변수의 기본값을 설정 가능
+            console.log(`num:${num} name:${name} addr:${addr}`);
+        }
+        showInfo(1,"김구라","노량진");
+        //자바스크립트에서는 변수를 만들고 아무것도 전달하지 않아도 호출된다.
+        showInfo();
+        showInfo(2); //작성한 만큼만 기본값에서 변경된다.
+        showInfo(3,"monkery");
+
+        //rest parameter
+        function printMsgs(...args){ //매개변수의 갯수 및 타입이 제한이 없고 배열로 출력된다.
+            //args는 매개변수에 전달된 값들이 들어 있는 배열이다.
+            console.log(args);
+        }
+        
+        printMsgs(); //빈 배열
+        printMsgs("hi"); 
+        printMsgs("hi","bye","hello");
+        printMsgs(1);
+    </script>
+</body>
+</html>

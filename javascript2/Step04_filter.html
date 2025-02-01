@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_filter.html</title>
+</head>
+<body>
+    <script>
+        const nums=[-10,20,30,-5,-20,40,15];
+        //특정 item 이 필터링된 새로운 배열을 리턴한다.
+        const result1=nums.filter(item=>{
+            console.log("호출됨!");
+            return item > 0;  //boolean 값을 리턴
+        });
+
+        const result2=nums.filter(item=>item<0);
+
+        const msgs=["hi","bye","안녕","잘가","hello"];
+        //msg 배열에서 영문자로만 구성된 새로문 배열 얻어내기
+
+        //시작과 끝을 명시해야 함
+        const reg=RegExp("^[a-zA-Z]+$");
+        
+        const result3=msgs.filter(item=>{
+            return reg.test(item);
+        });
+
+        const result3_1=msgs.filter(msg=>reg.test(msg));
+
+        const phones = [
+            { name: "iPhone 14", price: 999 },
+            { name: "Samsung Galaxy S23", price: 899 },
+            { name: "Google Pixel 8", price: 799 },
+            { name: "OnePlus 11", price: 729 },
+            { name: "Xiaomi Mi 13", price: 599 },
+            { name: "Sony Xperia 1 V", price: 1199 },
+            { name: "Huawei P60 Pro", price: 899 },
+            { name: "Asus ROG Phone 7", price: 999 },
+            { name: "Oppo Find X6 Pro", price: 849 },
+            { name: "Motorola Edge 40", price: 699 },
+        ];
+
+        // phones 배열에서 전화기 가격이 800 달러 이상인 전화기 정보만 담긴 새로운 배열을
+        //얻어내 보세요        
+        const result4=phones.filter(phone=>phone.price>=800);
+
+        //
+
+    </script>
+</body>
+</html>
