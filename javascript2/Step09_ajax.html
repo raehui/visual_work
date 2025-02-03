@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_ajax.html</title>
+</head>
+<body>
+    <button onclick="request()">요청하기</button>
+    <script>
+        function request(){
+            fetch("http://localhost:8888/Step07Final/ajax/member.jsp")
+            .then(res=>res.json())
+            .then(data=>{
+				console.log(data);
+			});
+            console.log("fetch() 요청을 했습니다.");
+        }
+    </script>
+</body>
+</html>
