@@ -39,14 +39,16 @@
             constructor(name,num,addr){
                 console.log("Phone 생성자 호출됨");
                 this.name=name; //필드를 직접 선언하지 않아도 자동으로 필드를 제작함
+                this.num=num;
             }
 
             call(){
                 console.log(this.name+"전화를 걸어요!"); //this 생략 불가
+                console.log(this.num+"번호는 입니다!");
             }
         }
 
-        const p1=new Phone("iphone");
+        const p1=new Phone("iphone",2);
         const p2=new Phone("android");
         
         p1.call();
