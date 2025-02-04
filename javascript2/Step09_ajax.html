@@ -9,7 +9,10 @@
     <button onclick="request()">요청하기</button>
     <script>
         function request(){
+            //약속 객체가 리턴이 되는데 약속이 이행이 된다면 then함수가 호출됨
+            //약간 조건 느낌....
             fetch("http://localhost:8888/Step07Final/ajax/member.jsp")
+            //json으로 변환이 된다면(약속) 다음으로 실행된다.
             .then(res=>res.json())
             .then(data=>{
 				console.log(data);

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_promise3.html</title>
+</head>
+<body>
+    <button onclick="doIt()">작업시작</button>
+    <script>
+
+        async function doIt(){
+            console.log("작업을 시작했습니다.");
+            /*
+                await 은 Promise 가 해결될 때까지 기다린다 (스레드가 blocking 되는 것은 아니다) 
+                만일 해결된다면 결과 데이터가 리턴된다.
+            */
+
+            try{
+                //실행의 흐름이 Promise가 해결될 때까지 다른 곳에 대기하고 있다 = 실행의 흐름을 잡고있는 것이 아니다.
+                //그래서 다른 곳에서 다른 작업을 수행할 수 있다.
+                const res = await fetch("http://localhost:8888/Step07Final/ajax/member2.jsp");
+                // res.ok 에는 정상적인 응답이 왔는지 여부가 true, false 로 들어 있다.
+                if(!res.ok){
+                    // 400 번대 혹은 500번대 에러 응답인 경우 여기가 실행된다.
+                    // 이 정보가 throw로 인해서 catch 의 err로 들어간다.
+                    throw new Error(`HTTP 에러! 상태코드:${res.status}`);
+                }
+
+                //res.json()이 해결될 때까지 기다림
+                const data = await res.json();
+
+                console.log(data);
+            }catch(err){
+                console.log("err");
+            }finally{
+                console.log("작업완료!");
+            }
+
+            console.log("doIt 함수가 리턴됩니다.");
+        }
+
+        //asnyc 함수는 다양한 모양으로 만들 수 잇다.
+        //asnyc 예약어를 함수 만들기 전에만 붙이면 된다. = 붙이면 비동기 함수가 된다. = await 이 안에 존재한다.
+        async function a(){
+
+        }
+
+        const b=async function(){};
+
+        const c=async ()=>{};
+
+    </script>
+</body>
+</html>

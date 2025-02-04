@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_promise2.html</title>
+</head>
+<body>
+    <button onclick="test()">눌러보셈</button>
+    <script>
+        function test(){
+            //Promise 객체 생성 , 기본으로 제공이 되는 클래스
+            const p1=new Promise((resolve,reject)=>{
+
+                let isSuccess=true;
+                
+                
+                setTimeout(()=>{
+                    if(isSuccess){
+                        resolve("작업성공!");
+                    }else{
+                        reject("작업실패ㅜㅜ");
+                    }
+                },3000);
+
+            }); 
+            
+            //Promise 가 이행이 된다면 then() 안에 있는 함수가 호출되고
+            p1.then(result=>{
+                //result 매개 변수에 결과 데이터가 담겨 잇는 구조이다.
+                console.log(result);
+                //새로운 Promise 객체를 리턴하기
+                return new Promise((resolve,reject)=>{
+                    //바로 해결
+                    resolve("2 번째 작업성공!");
+                });
+
+            })
+            .then((result)=>{
+                console.log(result);
+            })
+            .catch(err=>{ //Promise 가 reject 되면 catch() 안에 있는 함수가 호출된다. , 예외가 발생하면 자동으로 리젝되어서 실행
+                console.log(err);
+            })
+            .finally(()=>{
+                //약속이행, 실패 여부와 상관없이 호출되는 함수
+                console.log("작업이 완료 되었습니다.!");
+            });
+        }
+    </script>
+</body>
+</html>
