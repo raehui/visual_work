@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_animate.html</title>
+    <style></style>
+    <!--animate css 로딩 하기-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <h1 class="animate__animated animate__bounce">Animate Css</h1>
+    <p class="animate__animated animate__swing">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam vitae dicta odio dolorum delectus nisi reiciendis laboriosam eum ducimus! Dignissimos beatae magni porro atque corporis unde autem numquam, quaerat itaque.</p>
+    <p class="animate__animated animate__flip">어지러워.....</p>
+    <p>기본 동작은 페이지 로딩 시점에 1번 1초 동안 동작한다.</p>
+    <h1 class="animate__animated animate__bounce animate__infinite">무한 반복</h1>
+    <!--자바스크립트-->
+    <button class="animate__animated" id="myBtn">동작 시점 변경</button>
+
+    <script>
+        document.querySelector("#myBtn").addEventListener("click",(e)=>{
+            //animation 에 관련된 클래스 추가하기
+            e.target.classList.add("animate__rubberBand");
+            //animation 이 동작인 끝난 후에 클래스를 제거해야 함
+            e.target.addEventListener("animationend",()=>{
+                e.target.classList.remove("animate__rubberBand");
+            });
+        });
+
+    </script>
+</body>
+</html>
